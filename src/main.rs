@@ -1,6 +1,6 @@
 use crossterm::{
     cursor,
-    style::{PrintStyledContent, Stylize},
+    style::{Print, PrintStyledContent, Stylize},
     terminal, ExecutableCommand, QueueableCommand,
 };
 use crossterm::{
@@ -33,6 +33,7 @@ fn slide_show(presen: String) {
     for slide in presen.split("\n\n") {
         draw_slide(slide.to_string()).unwrap();
     }
+    println!("");
 }
 
 fn draw_slide(slide: String) -> io::Result<()> {
@@ -44,7 +45,7 @@ fn draw_slide(slide: String) -> io::Result<()> {
     let mut line_count = 1;
     for text in slide.split("\n") {
         let text: String = text.to_owned() + "\n";
-        show_text(text, line_count)?;
+        show_text(text.trim().to_string(), line_count)?;
         line_count += 1;
         wait_keypress();
     }
@@ -74,10 +75,12 @@ fn show_text(text: String, line_count: u16) -> io::Result<()> {
     } else if text.starts_with("#") {
         stdout.queue(PrintStyledContent(
             text.replacen("#", "", 1)
-                .attribute(crossterm::style::Attribute::Bold),
+                .trim()
+                .attribute(crossterm::style::Attribute::Bold)
+                .attribute(crossterm::style::Attribute::Underlined),
         ))?;
     } else {
-        stdout.queue(PrintStyledContent(text.with(crossterm::style::Color::Grey)))?;
+        stdout.queue(Print(text))?;
     }
     stdout.flush()?;
     Ok(())
