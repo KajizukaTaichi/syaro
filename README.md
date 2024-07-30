@@ -9,7 +9,7 @@ Syaro works on console screen.
 Syaro is designed use for software developer.
 
 # Format
-The format is  near to markdown.
+The format is near to markdown.
 So, it's very easy to write!
 
 # Overall
