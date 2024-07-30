@@ -1,17 +1,16 @@
-皆さん、こんにちは。
-桐間紗路...いや、梶塚太智です
-# 今回は新製品発表をします！
+# Syaro
+Lightweight presentation tool on console
+(c) 2024 KajizukaTaichi. All rights reserved
 
-名前を言い間違えてまったのは、コードネームのせいです。
-その名も「Syaro」です。テキトーに付けました。
-なので皆さんから名前のアイデア募集してます！
+# About
+This is lightweight presentation tool written in Rust.
+Syaro works on console screen.
+Syaro is designed use for software developer.
 
-え？どれが新製品だって？
-# そうです、このプレゼンをしているツールこそが新製品です。
+# Format
+The format is  near to markdown.
+So, it's very easy to write!
 
-# すばらしいでしょ？
-このソフトウェア、コンソール上でプレゼンが出来ちゃうのよ！
-しかも物凄く軽い動作
-
-以上です
-# ありがとうございました！
+# Overall
+You too, Let's get started Syaro.
+Thanks for watch this presentation!
